@@ -1,0 +1,31 @@
+# Configuration file for the Dice plugin
+# Generated with version 1.0
+########################################
+
+# Default number and type of dice to roll if not specified (e.g. 1x D6)
+default:
+  sides: 6
+  count: 1
+
+# Maximum allowed sides and number of dice that can be rolled at one time
+maximum:
+  sides: 100
+  count: 10
+  
+# Should rolls be logged to the console too
+logging: false
+  
+# Broadcast settings (-1 for unlimited range)
+broadcast:
+  crossworld: true
+  range: -1
+
+# Messages to send to the player (or the server, if they have broadcast perms
+#   {PLAYER}    The name of the player who rolled
+#   {RESULT}    The results of the roll
+#   {COUNT}     The number of dice rolled
+#   {SIDES}     The number of sides per die
+#   {TOTAL}     The total value of the roll
+messages:
+  private: '&c[&fDice&c] &fYou rolled {RESULT} &7({COUNT}d{SIDES})'
+  broadcast: '&c[&fDice&c] &f{PLAYER} rolled {RESULT} &7({COUNT}d{SIDES})'

@@ -1,0 +1,41 @@
+name: Dice
+version: '1.0'
+description: Roll dice in-game via command
+
+author: EasyMFnE
+
+database: false
+main: net.easymfne.dice.Dice
+load: STARTUP
+
+commands:
+  roll:
+    description: Roll dice
+    permission: dice.roll
+    permission-message: 'Unknown command. Type "/help" for help.'
+
+permissions:
+  dice.all:
+    default: op
+    description: Allows access to everything
+    children:
+      dice.roll: true
+      dice.reload: true
+      dice.roll.any: true
+      dice.roll.multiple: true
+      dice.roll.broadcast: true
+
+  dice.reload:
+    description: 'Allow user to reload the configuration'
+
+  dice.roll:
+    description: 'Allow user to use the /roll command'
+
+  dice.roll.any:
+    description: 'Allow user to roll any-sided dice'
+
+  dice.roll.multiple:
+    description: 'Allow user to multiple dice at once'
+
+  dice.roll.broadcast:
+    description: 'Broadcast the results of the roll'

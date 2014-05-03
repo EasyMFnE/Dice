@@ -29,3 +29,4 @@ broadcast:
 messages:
   private: '&c[&fDice&c] &fYou rolled {RESULT} &7({COUNT}d{SIDES})'
   broadcast: '&c[&fDice&c] &f{PLAYER} rolled {RESULT} &7({COUNT}d{SIDES})'
+

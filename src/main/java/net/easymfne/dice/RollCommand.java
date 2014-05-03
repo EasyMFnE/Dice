@@ -36,7 +36,8 @@ public class RollCommand implements CommandExecutor {
     /**
      * Instantiate by getting a reference to the plugin instance, creating a new
      * Random, and registering this class to handle the '/roll' command.
-     * @param plugin
+     * 
+     * @param plugin Reference to Dice plugin instance
      */
     public RollCommand(Dice plugin) {
         this.plugin = plugin;
@@ -270,3 +271,4 @@ public class RollCommand implements CommandExecutor {
     }
     
 }
+

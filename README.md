@@ -13,3 +13,4 @@ This plugin allows players to roll dice ingame, via a simple command.
 
 ## Configuration ##
 See `config.yml`
+

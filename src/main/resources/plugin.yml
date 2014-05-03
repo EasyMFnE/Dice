@@ -39,3 +39,4 @@ permissions:
 
   dice.roll.broadcast:
     description: 'Broadcast the results of the roll'
+

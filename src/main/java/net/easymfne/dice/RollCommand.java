@@ -1,16 +1,16 @@
 /*
  * This file is part of the Dice plugin by EasyMFnE.
- *
- *   Dice is free software: you can redistribute it and/or modify it under the 
- * terms of the GNU General Public License as published by the Free Software 
+ * 
+ * Dice is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or any later version.
- *
- *   Dice is distributed in the hope that it will be useful, but without any
- * warranty; without even the implied warranty of merchantability or fitness 
- * for a particular purpose.  See the GNU General Public License for details.
- *
- *   You should have received a copy of the GNU General Public License v3 along
- * with Dice.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Dice is distributed in the hope that it will be useful, but without any
+ * warranty; without even the implied warranty of merchantability or fitness for
+ * a particular purpose. See the GNU General Public License for details.
+ * 
+ * You should have received a copy of the GNU General Public License v3 along
+ * with Dice. If not, see <http://www.gnu.org/licenses/>.
  */
 package net.easymfne.dice;
 
@@ -37,7 +37,8 @@ public class RollCommand implements CommandExecutor {
      * Instantiate by getting a reference to the plugin instance, creating a new
      * Random, and registering this class to handle the '/roll' command.
      * 
-     * @param plugin Reference to Dice plugin instance
+     * @param plugin
+     *            Reference to Dice plugin instance
      */
     public RollCommand(Dice plugin) {
         this.plugin = plugin;
@@ -48,11 +49,13 @@ public class RollCommand implements CommandExecutor {
     /**
      * Broadcast the results of a dice roll to the players of the server.
      * Configuration can be set so that messages are only set within the world
-     * that the player resides, and also within a certain distance of them.
-     * Dice rolled by non-players (e.g. the Console) are sent to all players.
+     * that the player resides, and also within a certain distance of them. Dice
+     * rolled by non-players (e.g. the Console) are sent to all players.
      * 
-     * @param sender The user rolling the dice
-     * @param message The fully-formatted message to display
+     * @param sender
+     *            The user rolling the dice
+     * @param message
+     *            The fully-formatted message to display
      */
     private void broadcast(CommandSender sender, String message) {
         if (message == null) {
@@ -63,7 +66,7 @@ public class RollCommand implements CommandExecutor {
         if (plugin.getPluginConfig().isLogging()) {
             plugin.getLogger().info(message);
         }
-
+        
         for (Player p2 : plugin.getServer().getOnlinePlayers()) {
             if (plugin.getPluginConfig().isCrossworld() || p1 == null
                     || p1.getWorld() == p2.getWorld()) {
@@ -89,9 +92,12 @@ public class RollCommand implements CommandExecutor {
      * This method replaces tags: {PLAYER}, {RESULT}, {COUNT}, {SIDES}, {TOTAL}.
      * This method also replaces '&' style color codes with proper ChatColors.
      * 
-     * @param sender The user that rolled the dice
-     * @param roll The results of the roll, as an array
-     * @param sides The number of sides on the dice
+     * @param sender
+     *            The user that rolled the dice
+     * @param roll
+     *            The results of the roll, as an array
+     * @param sides
+     *            The number of sides on the dice
      * @return The fancy-formatted message
      */
     private String formatString(CommandSender sender, Integer[] roll, int sides) {
@@ -115,8 +121,10 @@ public class RollCommand implements CommandExecutor {
     /**
      * Get the squared distance between two players.
      * 
-     * @param p1 Player one
-     * @param p2 Player two
+     * @param p1
+     *            Player one
+     * @param p2
+     *            Player two
      * @return The distance^2
      */
     private int getDSquared(Player p1, Player p2) {
@@ -129,8 +137,10 @@ public class RollCommand implements CommandExecutor {
     /**
      * Show the results of a roll to a player privately.
      * 
-     * @param sender The user rolling the dice
-     * @param message The fully-formatted message to display
+     * @param sender
+     *            The user rolling the dice
+     * @param message
+     *            The fully-formatted message to display
      */
     private void message(CommandSender sender, String message) {
         if (message == null) {
@@ -140,10 +150,10 @@ public class RollCommand implements CommandExecutor {
     }
     
     /**
-     * This method handles user commands.
-     * Usage: "/roll <help,reload>" which either shows help or reloads config.
-     * Usage: "/roll [count] [d<sides>]" where the order of the arguments does
-     * not matter, but the number of sides must be prefixed with 'd'.
+     * This method handles user commands. Usage: "/roll <help,reload>" which
+     * either shows help or reloads config. Usage: "/roll [count] [d<sides>]"
+     * where the order of the arguments does not matter, but the number of sides
+     * must be prefixed with 'd'.
      */
     @Override
     public boolean onCommand(CommandSender sender, Command command,
@@ -204,9 +214,12 @@ public class RollCommand implements CommandExecutor {
      * Roll a set of dice for a user, and either broadcast the results publicly
      * or send them privately, depending on the user's permissions.
      * 
-     * @param sender The user rolling the dice
-     * @param count The number of dice to roll
-     * @param sides The number of sides per die
+     * @param sender
+     *            The user rolling the dice
+     * @param count
+     *            The number of dice to roll
+     * @param sides
+     *            The number of sides per die
      */
     private void roll(CommandSender sender, int count, int sides) {
         Integer[] result = new Integer[count];
@@ -224,7 +237,8 @@ public class RollCommand implements CommandExecutor {
      * Show personalized usage help to the user, taking into account his or her
      * permissions.
      * 
-     * @param sender The user to help
+     * @param sender
+     *            The user to help
      */
     private void showHelp(CommandSender sender) {
         /* Treat the pair of booleans as 2^0 and 2^1 bits */
@@ -247,9 +261,10 @@ public class RollCommand implements CommandExecutor {
     }
     
     /**
-     * Square an input.  Useful for decluttering the code.
+     * Square an input. Useful for decluttering the code.
      * 
-     * @param input The number to be squared
+     * @param input
+     *            The number to be squared
      * @return The result
      */
     private int square(int input) {
@@ -259,7 +274,8 @@ public class RollCommand implements CommandExecutor {
     /**
      * Calculate the sum of an array of numbers.
      * 
-     * @param roll The array of numbers
+     * @param roll
+     *            The array of numbers
      * @return The sum
      */
     private int sum(Integer[] roll) {
@@ -271,4 +287,3 @@ public class RollCommand implements CommandExecutor {
     }
     
 }
-

@@ -1,5 +1,5 @@
 # Configuration file for the Dice plugin
-# Generated with version 1.0
+# Generated with version 1.1
 ########################################
 
 # Default number and type of dice to roll if not specified (e.g. 1x D6)
@@ -9,12 +9,12 @@ default:
 
 # Maximum allowed sides and number of dice that can be rolled at one time
 maximum:
-  sides: 100
-  count: 10
+  sides: 24
+  count: 6
   
 # Should rolls be logged to the console too
 logging: false
-  
+
 # Broadcast settings (-1 for unlimited range)
 broadcast:
   crossworld: true

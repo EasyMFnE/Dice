@@ -1,16 +1,16 @@
 /*
  * This file is part of the Dice plugin by EasyMFnE.
- *
- *   Dice is free software: you can redistribute it and/or modify it under the 
- * terms of the GNU General Public License as published by the Free Software 
+ * 
+ * Dice is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or any later version.
- *
- *   Dice is distributed in the hope that it will be useful, but without any
- * warranty; without even the implied warranty of merchantability or fitness 
- * for a particular purpose.  See the GNU General Public License for details.
- *
- *   You should have received a copy of the GNU General Public License v3 along
- * with Dice.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Dice is distributed in the hope that it will be useful, but without any
+ * warranty; without even the implied warranty of merchantability or fitness for
+ * a particular purpose. See the GNU General Public License for details.
+ * 
+ * You should have received a copy of the GNU General Public License v3 along
+ * with Dice. If not, see <http://www.gnu.org/licenses/>.
  */
 package net.easymfne.dice;
 
@@ -26,14 +26,15 @@ public class Config {
     /**
      * Instantiate the class and give it a reference back to the plugin itself.
      * 
-     * @param plugin The Dice plugin
+     * @param plugin
+     *            The Dice plugin
      */
     public Config(Dice plugin) {
         this.plugin = plugin;
     }
     
     /**
-     * Get the desired broadcast message template.  The default case looks like:
+     * Get the desired broadcast message template. The default case looks like:
      * [Dice] EasyMFnE rolled 2, 3, 6, 1, 1 (5d6)
      * 
      * @return The broadcast message template
@@ -79,7 +80,7 @@ public class Config {
     }
     
     /**
-     * Get the desired private message template.  The default case looks like:
+     * Get the desired private message template. The default case looks like:
      * [Dice] You rolled 2, 3, 6, 1, 1 (5d6)
      * 
      * @return The private message template
